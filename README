@@ -1,0 +1,80 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=829
+
+gq.vim provides shortcut "q", a variant on Vim's built-in beautifier
+"gq" with enhanced e-mail support. Use it just as you'd use "gq" when
+in Visual mode. - Features:
+
+ - It's capable of dealing with lists being part of quotations.
+   (Vim's 'comments' engine "gq" depends on can't do this.)
+ - Quote marks may appear in conjunction with enclosed initials
+   denoting the author's name.
+ - It can perform basic tasks on malformed quoting-markup. (remove
+   enclosed whitespace, reposition initials, convert badly wrapped
+   lines)
+ - It's configurable. (Have a look at gq.vim to see how this can be
+   accomplished..)
+
+A quote sample to illustrate how it works..
+
+  > AB> > 1. qtqt qtqtq. qtqtqt qtqtqt qtqtq tqtqt tqqtt qtqt qtqt.
+  > >AB > 2. qtqt qtqtq. qtqtqt qtqtqt qtqtq tqtqt tqqtt qtqt qtqt.
+  >CD > - qtqt qtqtq qtqtqt qtqtqt qtqtq, tqtqt tqqtt qtqt qtqt.
+  > CD> * qtqt qtqtq qtqtqt qtqtqt qtqtq, tqtqt tqqtt qtqt qtqt.
+  > qtqt qtqtq qtqtqt. qtqtqt qtqtq tqtqt, tqqtt qtqt qtqt qtqt qt
+  qtqt qtqtqt.
+
+
+"Vipgq" (:setl fo=tcrqn ai com=n:>,fb:-,fb:* tw=36):
+
+  > AB> > 1. qtqt qtqtq. qtqtqt
+  > qtqtqt qtqtq tqtqt tqqtt qtqt
+  > qtqt.
+  > >AB > 2. qtqt qtqtq. qtqtqt
+  > >qtqtqt qtqtq tqtqt tqqtt qtqt
+  > >qtqt.
+  >CD > - qtqt qtqtq qtqtqt qtqtqt
+  >qtqtq, tqtqt tqqtt qtqt qtqt.
+  >CD> * qtqt qtqtq qtqtqt qtqtqt
+  >qtqtq, tqtqt tqqtt qtqt qtqt.
+  >qtqt qtqtq qtqtqt. qtqtqt qtqtq
+  >tqtqt, tqqtt qtqt qtqt qtqt qt
+  qtqt qtqtqt.
+
+
+"Vipgq" (:setl fo=tcrqn ai com=n:>,fb:-,fb:*,n:A,n:B,n:C,n:D tw=36):
+
+  > AB> > 1. qtqt qtqtq. qtqtqt
+  > AB> > qtqtqt qtqtq tqtqt tqqtt
+  > AB> > qtqt qtqt.
+  > >AB > 2. qtqt qtqtq. qtqtqt
+  > >AB > qtqtqt qtqtq tqtqt tqqtt
+  > >AB > qtqt qtqt.
+  >CD > - qtqt qtqtq qtqtqt qtqtqt
+  >CD > qtqtq, tqtqt tqqtt qtqt
+  >CD > qtqt.
+  > CD> * qtqt qtqtq qtqtqt qtqtqt
+  > CD> qtqtq, tqtqt tqqtt qtqt
+  > CD> qtqt.
+  > qtqt qtqtq qtqtqt. qtqtqt qtqtq
+  > tqtqt, tqqtt qtqt qtqt qtqt qt
+  qtqt qtqtqt.
+
+
+"Vipq" (:setl fo=tcqn ai com=n:>,fb:-,fb:* tw=36):
+
+  AB>>> 1. qtqt qtqtq. qtqtqt qtqtqt
+  AB>>>    qtqtq tqtqt tqqtt qtqt
+  AB>>>    qtqt.
+  AB>>> 2. qtqt qtqtq. qtqtqt qtqtqt
+  AB>>>    qtqtq tqtqt tqqtt qtqt
+  AB>>>    qtqt.
+  CD>> - qtqt qtqtq qtqtqt qtqtqt
+  CD>>   qtqtq, tqtqt tqqtt qtqt
+  CD>>   qtqt.
+  CD>> * qtqt qtqtq qtqtqt qtqtqt
+  CD>>   qtqtq, tqtqt tqqtt qtqt
+  CD>>   qtqt.
+  > qtqt qtqtq qtqtqt. qtqtqt qtqtq
+  > tqtqt, tqqtt qtqt qtqt qtqt qt
+  > qtqt qtqtqt.
+
